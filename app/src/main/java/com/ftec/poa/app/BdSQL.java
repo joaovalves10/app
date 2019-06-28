@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class DBUtils extends SQLiteOpenHelper {
+public class BdSQL extends SQLiteOpenHelper {
     private static int version = 16844060;
     private static String dbName = "placesToGo";
 
@@ -29,7 +29,7 @@ public class DBUtils extends SQLiteOpenHelper {
     private Context context;
     SQLiteDatabase db;
 
-    public DBUtils(Context appContext) {
+    public BdSQL(Context appContext) {
         super(appContext, dbName, null, version);
         this.context = appContext;
     }

@@ -34,7 +34,7 @@ public class MapViewActivity extends FragmentActivity implements OnMapReadyCallb
         gMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
         if(index == -1){
             for(int i = 0; i < MainActivity.locations.size();i++){
-                Location l = MainActivity.locations.get(i);
+                Localizacao l = MainActivity.locations.get(i);
                 if(i == 0){
                     position = new CameraPosition(new LatLng(l.getLati(),l.getLongi()),15,0,0);
                     CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
@@ -49,7 +49,7 @@ public class MapViewActivity extends FragmentActivity implements OnMapReadyCallb
                         .title(l.getPlaceName()).snippet(l.getAddressName()).draggable(false));
             }
         }else{
-            Location l = MainActivity.locations.get(index);
+            Localizacao l = MainActivity.locations.get(index);
             position = new CameraPosition(new LatLng(l.getLati(),l.getLongi()),15,0,0);
             CameraUpdate update = CameraUpdateFactory.newCameraPosition(position);
             gMap.animateCamera(update);
@@ -68,10 +68,10 @@ public class MapViewActivity extends FragmentActivity implements OnMapReadyCallb
     private int getDrawable(String type){
         switch (type){
             case "Hospital":return R.drawable.hospital;
-            case "Restaurante":return R.drawable.restaurant;
-            case "Escritorio":return R.drawable.office;
-            case "Escola":return R.drawable.school;
-            case "Parque":return  R.drawable.park;
+            case "Restaurante":return R.drawable.restaurante;
+            case "Escritorio":return R.drawable.escritorio;
+            case "Escola":return R.drawable.escola;
+            case "Parque":return  R.drawable.parque;
             default: return R.mipmap.ic_launcher_round;
         }
     }

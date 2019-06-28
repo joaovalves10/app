@@ -2,7 +2,7 @@ package com.ftec.poa.app;
 
 import java.io.Serializable;
 
-public class Location implements Serializable {
+public class Localizacao implements Serializable {
     private int locationID;
     private int locUserID ;
     private String placeName;
@@ -12,7 +12,7 @@ public class Location implements Serializable {
     private String addressName ;
     private String type;
 
-    public Location(int locID, int userID, String pName, double rate, double latitude, double longitude,String addName,String type){
+    public Localizacao(int locID, int userID, String pName, double rate, double latitude, double longitude, String addName, String type){
         this.locationID = locID;
         this.locUserID = userID;
         this.placeName = pName;

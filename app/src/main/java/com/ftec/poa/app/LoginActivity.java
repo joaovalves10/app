@@ -11,7 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    DBUtils db;
+    BdSQL db;
     ClassCollection cc;
     EditText txtUsername,txtPassword;
     Button btnLogin;
@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        db = new DBUtils(getApplicationContext());
+        db = new BdSQL(getApplicationContext());
         cc = new ClassCollection(getApplicationContext());
         initialize();
         setEvents();
@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         lblRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
                 startActivity(intent);
             }
         });

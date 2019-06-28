@@ -21,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.ftec.poa.app.SplashActivity"
+            android:name="com.ftec.poa.app.CarregandoActivity"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -33,10 +33,10 @@
         <activity android:name="com.ftec.poa.app.MainActivity" />
         <activity android:name="com.ftec.poa.app.LoginActivity" />
         <activity
-            android:name="com.ftec.poa.app.RegisterActivity"
+            android:name="com.ftec.poa.app.RegistroActivity"
             android:parentActivityName="com.ftec.poa.app.LoginActivity" />
         <activity
-            android:name="com.ftec.poa.app.SetLocationActivity"
+            android:name="com.ftec.poa.app.SetLocalizacaoActivity"
             android:parentActivityName="com.ftec.poa.app.MainActivity" />
         <activity android:name="com.ftec.poa.app.MapViewActivity"/>
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>

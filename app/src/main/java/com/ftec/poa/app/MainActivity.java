@@ -15,16 +15,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    DBUtils db;
+    BdSQL db;
     ListView lstPlaces;
     CustomAdapter adapter;
     Button btnViewAll;
-    public static List<Location> locations;
+    public static List<Localizacao> locations;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DBUtils(getApplicationContext());
+        db = new BdSQL(getApplicationContext());
         locations = new ArrayList<>();
         lstPlaces = (ListView)findViewById(R.id.lstPlaces);
         btnViewAll = (Button)findViewById(R.id.btnViewAll);
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.simplemenu,menu);
+        getMenuInflater().inflate(R.menu.menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if(id == R.id.menuAdd){
-            Intent intent = new Intent(MainActivity.this,SetLocationActivity.class);
+            Intent intent = new Intent(MainActivity.this, SetLocalizacaoActivity.class);
             startActivityForResult(intent,1);
         }else if(id == R.id.menuLogout){
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 double longi = c.getDouble(c.getColumnIndex("longi"));
                 String addName = c.getString(c.getColumnIndex("addressName"));
                 String type = c.getString(c.getColumnIndex("type"));
-                Location l = new Location(locID,uID,pName,rate,latitude,longi,addName,type);
+                Localizacao l = new Localizacao(locID,uID,pName,rate,latitude,longi,addName,type);
                 locations.add(l);
             }while(c.moveToNext());
             adapter = new CustomAdapter(MainActivity.this,locations);
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
         lstPlaces.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(MainActivity.this,SetLocationActivity.class);
+                Intent intent = new Intent(MainActivity.this, SetLocalizacaoActivity.class);
                 intent.putExtra("isSave",false);
                 intent.putExtra("location",locations.get(i));
                 startActivityForResult(intent,1);

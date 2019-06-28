@@ -8,16 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegistroActivity extends AppCompatActivity {
     ClassCollection cc;
-    DBUtils db;
+    BdSQL db;
     EditText txtRegFullname, txtRegUsername,txtRegPassword, txtRegRetype;
     Button btnRegRegister;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        db = new DBUtils(getApplicationContext());
+        setContentView(R.layout.activity_registro);
+        db = new BdSQL(getApplicationContext());
         cc = new ClassCollection(getApplicationContext());
         initialize();
         setEvents();

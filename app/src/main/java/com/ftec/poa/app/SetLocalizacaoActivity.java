@@ -17,22 +17,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class SetLocationActivity extends AppCompatActivity {
-    DBUtils db;
+public class SetLocalizacaoActivity extends AppCompatActivity {
+    BdSQL db;
     ArrayList<String> types = new ArrayList<String>();
     EditText txtPlaceName,txtAddress;
     Spinner cmbTypes;
     Button btnSave;
     RatingBar rateRate;
-    Location loc;
+    Localizacao loc;
     List<Address> address;
     double lati,longi;
     boolean isSave = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_location);
-        db = new DBUtils(getApplicationContext());
+        setContentView(R.layout.activity_set_localizacao);
+        db = new BdSQL(getApplicationContext());
         initialize();
     }
     private void initialize(){
@@ -50,7 +50,7 @@ public class SetLocationActivity extends AppCompatActivity {
         Intent in = getIntent();
         isSave = in.getBooleanExtra("isSave",true);
         if(!isSave) {
-            loc = (Location) in.getSerializableExtra("location");
+            loc = (Localizacao) in.getSerializableExtra("location");
             lati = loc.getLati();
             longi = loc.getLongi();
             txtPlaceName.setText(loc.getPlaceName());
@@ -74,7 +74,7 @@ public class SetLocationActivity extends AppCompatActivity {
         bindValueToList();
     }
     private void bindValueToList() {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(SetLocationActivity.this, android.R.layout.simple_list_item_1, types);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(SetLocalizacaoActivity.this, android.R.layout.simple_list_item_1, types);
         cmbTypes.setAdapter(adapter);
         cmbTypes.setSelection(0);
     }

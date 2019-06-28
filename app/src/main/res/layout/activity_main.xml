@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/mainback"
+    android:background="@drawable/fundo"
     android:orientation="vertical"
     tools:context="com.ftec.poa.app.MainActivity">
 
@@ -13,8 +13,8 @@
         android:id="@+id/btnViewAll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="Arial"
-        android:text="Selecione aqui para ver todos os lugares no mapa ou use o campo + para inserir seus locais preferidos."
+        android:fontFamily="sans-serif-black"
+        android:text="Ver todos no mapa"
         android:textAllCaps="false"
         android:textColor="@android:color/black"
         android:textSize="20sp" />

@@ -18,15 +18,15 @@ import android.widget.Toast;
 import java.util.List;
 
 public class CustomAdapter extends BaseAdapter {
-    private DBUtils db;
+    private BdSQL db;
     private Activity activity;
     private LayoutInflater inflater;
-    List<Location> locations;
+    List<Localizacao> locations;
 
-    public CustomAdapter(Activity a, List<Location> locs) {
+    public CustomAdapter(Activity a, List<Localizacao> locs) {
         this.activity = a;
         this.locations = locs;
-        this.db = new DBUtils(a.getApplicationContext());
+        this.db = new BdSQL(a.getApplicationContext());
     }
 
     @Override
@@ -50,7 +50,7 @@ public class CustomAdapter extends BaseAdapter {
             inflater = (LayoutInflater) activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
         if (view == null) {
-            view = inflater.inflate(R.layout.listitem, null);
+            view = inflater.inflate(R.layout.itemslista, null);
         }
 
         TextView lblPlaceName = (TextView)view.findViewById(R.id.lblPlaceName);
@@ -60,7 +60,7 @@ public class CustomAdapter extends BaseAdapter {
         Button btnViewMap = (Button)view.findViewById(R.id.btnViewMap);
         ImageButton btnDeleteLoc = (ImageButton)view.findViewById(R.id.btnDeleteLoc);
 
-        Location l = locations.get(i);
+        Localizacao l = locations.get(i);
 
         lblPlaceName.setText(String.format("Nome do lugar: %s", l.getPlaceName()));
         lblAddress.setText(String.format("Endereço: %s", l.getAddressName()));

@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="@drawable/mainback"
-    tools:context="com.ftec.poa.app.SetLocationActivity">
+    android:background="@drawable/fundo"
+    tools:context="com.ftec.poa.app.SetLocalizacaoActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20sp"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif-black"
         android:text="Informação do Lugar a Ser Marcado"
         android:textColor="@android:color/black"
         android:textSize="30sp" />
@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10sp"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif"
         android:hint="Nome do Lugar"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10sp"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif"
         android:hint="Endereço do Lugar"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
@@ -59,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30sp"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif-black"
         android:text="Salvar"
         android:textAllCaps="false"
         android:textColor="@android:color/black"

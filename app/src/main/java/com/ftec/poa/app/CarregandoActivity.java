@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-public class SplashActivity extends AppCompatActivity {
+public class CarregandoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_carregando);
 
         SharedPreferences preferences =
                 getSharedPreferences("user_preferences", MODE_PRIVATE);
@@ -33,7 +33,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void mostrarLogin() {
-        Intent intent = new Intent(SplashActivity.this,
+        Intent intent = new Intent(CarregandoActivity.this,
                 LoginActivity.class);
         startActivity(intent);
         finish();
