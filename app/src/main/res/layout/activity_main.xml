@@ -7,19 +7,22 @@
     android:background="@drawable/mainback"
     android:orientation="vertical"
     tools:context="com.ftec.poa.app.MainActivity">
+
+
+    <Button
+        android:id="@+id/btnViewAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="Arial"
+        android:text="Selecione aqui para ver todos os lugares no mapa ou use o campo + para inserir seus locais preferidos."
+        android:textAllCaps="false"
+        android:textColor="@android:color/black"
+        android:textSize="20sp" />
+
     <ListView
         android:id="@+id/lstPlaces"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"/>
 
-    <Button
-        android:id="@+id/btnViewAll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="Ver todos"
-        android:textAllCaps="false"
-        android:textColor="@android:color/black"
-        android:textSize="20sp" />
 </LinearLayout>
