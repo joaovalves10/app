@@ -25,7 +25,7 @@ public class BdSQL extends SQLiteOpenHelper {
     private String longi = "longi";
     private String addressName = "addressName";
     private String type = "type";
-
+    private String lol = "lol";
     private Context context;
     SQLiteDatabase db;
 
